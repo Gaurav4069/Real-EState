@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import { MessageCircle, X } from "lucide-react"; // Icons
+import { MessageCircle, X } from "lucide-react"; 
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isChatOpen, setIsChatOpen] = useState(false);
 
-  const API_KEY = "YOUR_GEMINI_API_KEY";
+  const API_KEY = "AIzaSyDvvdqVBlH0m8R_awO-336aaD1nn3SwKOQ";
   const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
 
-  // Predefined FAQ responses
   const faqResponses = {
     "how do i create a listing": "To create a listing, log in, go to your dashboard, click 'Add Listing', fill in details and submit.",
     "how do i contact a landlord": "Open the listing and click 'Contact Landlord'. Fill the form and send your message.",
@@ -19,7 +18,6 @@ const Chatbot = () => {
     "what features does this project have": "This platform allows creating and managing property listings, searching/filtering properties, making payments, and interacting via a chatbot."
   };
 
-  // Check if user query matches FAQ
   const checkFAQ = (query) => {
     const lowerQuery = query.toLowerCase();
     for (let key in faqResponses) {
@@ -37,7 +35,6 @@ const Chatbot = () => {
       return;
     }
 
-    // If not in FAQ, fallback to Gemini
     const projectContext = `
 You are a helpful chatbot for a Real Estate Listing Platform.
 Answer ONLY questions about:
@@ -145,3 +142,4 @@ Politely refuse to answer anything unrelated.
 };
 
 export default Chatbot;
+
