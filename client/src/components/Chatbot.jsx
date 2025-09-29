@@ -7,7 +7,7 @@ const Chatbot = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
 
   const API_KEY = "AIzaSyDvvdqVBlH0m8R_awO-336aaD1nn3SwKOQ";
-  const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
+  const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
 
   const faqResponses = {
     "how do i create a listing": "To create a listing, log in, go to your dashboard, click 'Add Listing', fill in details and submit.",
@@ -142,4 +142,5 @@ Politely refuse to answer anything unrelated.
 };
 
 export default Chatbot;
+
 
