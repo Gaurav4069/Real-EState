@@ -21,11 +21,6 @@ import MyPurchases from './pages/MyPurchases';
 import PaymentSuccess from './pages/PaymentSuccess';
 
 
-  
-
-
-TermsAndCondition
-
 export default function App() {
   return (
     <BrowserRouter>
@@ -35,19 +30,19 @@ export default function App() {
       <Route path='/' element={<Home/>} />  
       <Route path='/sign-in' element={<SignIn/>} />  
       <Route path='/sign-up' element={<SignOut/>} />  
-      <Route path='/search' element={<Search/>} />  
       <Route path='/about' element={<About/>} />  
       <Route path='/connectus' element={<ConnectUs/>} /> 
-      <Route path='/listing/:listingId'  element={<Listing/>} />   
       <Route path='/about' element={<About />} />  
       <Route path='/termsandcondition' element={<TermsAndCondition/>} />
-      <Route path="/payment-success" element={<PaymentSuccess/>} />
 
       <Route element={<PrivateRoute/>}>
           <Route path='/profile' element={<Profile/>} /> 
           <Route path='/create-listing'  element={<CreateListing/>} />  
           <Route path='/update-listing/:listingId'  element={<UpdateListing/>} /> 
           <Route path="/my-purchases" element={<MyPurchases/>} />  
+          <Route path="/payment-success" element={<PaymentSuccess/>} />
+          <Route path='/search' element={<Search/>} />  
+          <Route path='/listing/:listingId'  element={<Listing/>} />   
           </Route>
       </Routes>
       <Chatbot/>
